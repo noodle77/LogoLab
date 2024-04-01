@@ -13,13 +13,10 @@
   - [Contact](#contact)
 
   ## Installation
-  Run 'npm install' within the terminal after navigating into the project's directory.
+  Run 'npm install' in the command line after navigating into this project's directory.
 
   ## Usage
   Run the command 'node index.js' in the command line. Answer the questions that follow.
-
-  ## Contributions
-  N/A
 
   ## Testing
   Run 'npm test' in the command line after navigating into this project's directory.
