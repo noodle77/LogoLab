@@ -18,18 +18,36 @@ const questions = [
     {
         type: "input",
         name: "textColor",
-        message: "Enter your desired text color in plain text or hexadecimal format."
+        message: "Enter your desired text color in plain text or hexadecimal format.",
+        validate: (color) => {
+            color = color.trim();
+            // Check if the input is a hexadecimal color value or plain text color name
+            if ((color.startsWith('#') && color.length === 7) || /^[a-zA-Z]+$/.test(color)) {
+                return true;
+            } else {
+                return "For hex, include '#' at the beginning followed by 6 characters.";
+            }
+        }
     },
     {
         type: "input",
         name: "fillColor",
-        message: "Enter your logo's fill color in plain text or hexadecimal format"
+        message: "Enter your logo's fill color in plain text or hexadecimal format",
+        validate: (color) => {
+            color = color.trim();
+            // Check if the input is a hexadecimal color value or plain text color name
+            if ((color.startsWith('#') && color.length === 7) || /^[a-zA-Z]+$/.test(color)) {
+                return true;
+            } else {
+                return "For hex, include '#' at the beginning followed by 6 characters.";
+            }
+        }
     }
 ];
 
 // Function to write the data to a file
 function writeToFile(filename, data) {
-    fs.writeFile(filename, data, (error) => {
+    fs.writeFile(filename, data, {encoding: 'utf-8'}, (error) => {
         if (error) {
             console.error(error);
         } else {
